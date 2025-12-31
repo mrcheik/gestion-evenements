@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap");
+
+:root {
+  --bg-main: #0f172a;
+  --bg-panel: #111827;
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.15);
+}
+
+/* =========================
+   BASE & GRID
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 3.5rem 1.5rem;
+  border-bottom: 1px solid var(--grid-line);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+/* =========================
+   PAGE
+========================= */
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3.5rem 1.5rem;
+  display: grid;
+  gap: 3.5rem;
+}
+
+/* =========================
+   PANELS
+========================= */
+.bloc,
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--grid-line);
+  padding: 2rem;
+}
+
+/* =========================
+   TITRES
+========================= */
+h2,
+.section-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+}
+
+/* =========================
+   FORMULAIRES
+========================= */
+.form {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 520px;
+}
+
+.form input,
+.form textarea {
+  background: transparent;
+  border: 1px solid var(--grid-line);
+  padding: 0.65rem 0.75rem;
+  color: var(--text-main);
+  font-family: inherit;
+}
+
+.form textarea {
+  min-height: 100px;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.row {
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.form button {
+  margin-top: 1rem;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.6rem 1.6rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form button:hover {
+  background: var(--accent);
+  color: var(--bg-main);
+}
+
+/* =========================
+   SEARCH BAR (NOUVEAU)
+========================= */
+.search-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.search-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 420px;
+  border: 1px solid var(--grid-line);
+  background: var(--bg-panel);
+}
+
+.search-container input {
+  background: transparent;
+  border: none;
+  padding: 0.65rem 0.8rem;
+  color: var(--text-main);
+  font-family: inherit;
+}
+
+.search-container input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-container input:focus {
+  outline: none;
+}
+
+.search-container button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.search-container button:hover {
+  background: var(--accent-soft);
+}
+
+/* =========================
+   EVENTS GRID
+========================= */
+#events-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* =========================
+   EVENT MODULE
+========================= */
+.event-card {
+  border: 1px solid var(--grid-line);
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.event-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+}
+
+.event-card h3 {
+  font-size: 1.1rem;
+}
+
+.event-card .category {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.event-card .description {
+  color: var(--text-muted);
+}
+
+.event-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+/* =========================
+   EVENT CARD – LISIBILITÉ
+========================= */
+.event-card {
+  background: rgba(17, 24, 39, 0.9); /* détache du fond */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  outline: 1px solid rgba(34, 211, 238, 0.35); /* double ligne technique */
+  outline-offset: -6px;
+  padding: 2rem;
+}
+
+/* barre structurelle gauche */
+.event-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    transparent
+  );
+}
+
+/* renforce la lisibilité interne */
+.event-card h3 {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.4rem;
+}
+
+.event-card ul {
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-top: 0.6rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 700px) {
+  body {
+    background-size: 24px 24px;
+  }
+
+  .bloc,
+  .card {
+    padding: 1.5rem;
+  }
+
+  .search-container {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion d'événements</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Plateforme d'événements</h1>
+    <p>Créer, rejoindre et explorer des événements en toute simplicité</p>
+</header>
+
+  <main class="page">
+
+    <!-- Ajouter un événement -->
+    <section class="bloc">
+      <h2>Nouvel événement</h2>
+
+      <form class="form" id="add-event-form">
+        <input id="titre" type="text" placeholder="Titre de l'événement" required>
+
+        <textarea id="description" placeholder="Description" required></textarea>
+
+        <div class="row">
+            <input id="date" type="date" required />
+            <input id="lieu" type="text" placeholder="Lieu" required />
+        </div>
+
+        <div class="row">
+          <input id="categorie" type="text" placeholder="Catégorie" required />
+          <input id="nombrePlace" min="1" type="number" placeholder="Nombre maximum de places" required/>
+        </div>
+
+        <button type="submit">Enregistrer</button>
+        <p id="message-evenement"></p>
+
+    </form>
+
+    </section>
+
+    <!-- Inscription à un événement -->
+    <section class="card">
+      <h2>S'inscrire à un événement</h2>
+
+      <form class="form" id="register-form">
+
+        <input id="nomUtil" type="text" placeholder="Nom" required />
+        <input id="adresse-email" type="email" placeholder="Adresse email" required />
+        <input id="nomEvent" type="text" placeholder="Nom de l'événement" required />
+        <button type="submit">S'inscrire</button>
+        <p id="message-inscription"></p>
+
+      </form>
+
+    </section>
+
+    <!-- Liste des événements -->
+    <section>
+
+      <h2 class="section-title">Événements disponibles</h2>
+
+      <div class="search-wrapper">
+          <div  class="search-container">
+            <input type="text" placeholder="Rechercher une Catégorie..." id="search-container">
+            <button>🔍</button>
+          </div>
+      </div>
+
+      <div id="events-grid">
+        
+        <!-- D'autres cartes pourront être ajoutées dynamiquement -->
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="dist/main.js"></script>
+
+</body>
+</html>
